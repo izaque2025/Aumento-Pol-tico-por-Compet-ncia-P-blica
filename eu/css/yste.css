@@ -1,116 +1,208 @@
  :root {
-            --primary: #0038a8;
-            --secondary: #009739;
-            --accent: #fed100;
-            --dark: #1a1a1a;
-            --light: #ffffff;
-            --danger: #d32f2f;
-            --warning: #f57c00;
-            --success: #388e3c;
+            --azul-marinho: #011627;
+            --verde-gestao: #20bf6b;
+            --ouro: #f7b731;
+            --branco: #ffffff;
+            --cinza-texto: #4b6584;
+            --vermelho-lei: #eb4d4b;
+            --bg-suave: #f1f2f6;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--dark);
-            background-color: #e9ecef;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
+            background-color: var(--bg-suave);
+            color: var(--azul-marinho);
+            line-height: 1.8;
         }
 
-        header {
-            background: linear-gradient(rgba(0, 56, 168, 0.9), rgba(0, 151, 57, 0.9)), url('https://images.unsplash.com/photo-1590905282693-b05ae85e1f77?auto=format&fit=crop&w=1350&q=80');
+        /* HEADER DE IMPACTO */
+        .hero {
+            background: linear-gradient(rgba(1, 22, 39, 0.9), rgba(1, 22, 39, 0.9)), url('https://images.unsplash.com/photo-1575517111478-7f6afd0973db?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 100px 20px;
+            color: var(--branco);
+            padding: 120px 20px;
             text-align: center;
+            border-bottom: 15px solid var(--ouro);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: -60px auto 60px;
-            background: var(--light);
+        .hero h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: 3px; }
+        .hero p { font-size: 1.4rem; max-width: 900px; margin: 20px auto; opacity: 0.9; }
+
+        .container { max-width: 1200px; margin: -60px auto 100px; padding: 0 20px; }
+
+        .secao {
+            background: var(--branco);
+            border-radius: 25px;
             padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin-bottom: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
-        h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        h2 { color: var(--primary); border-left: 10px solid var(--secondary); padding-left: 15px; margin-top: 40px; }
-        h3 { color: var(--secondary); margin-top: 25px; }
+        h2 { color: var(--azul-marinho); font-size: 2.2rem; border-left: 12px solid var(--verde-gestao); padding-left: 20px; margin-bottom: 30px; }
+        h3 { color: var(--verde-gestao); font-size: 1.6rem; margin-top: 30px; }
 
-        .grid-cards {
+        p { font-size: 1.15rem; color: var(--cinza-texto); text-align: justify; }
+
+        /* LIMITES DO CONGRESSO */
+        .limite-box {
+            background: var(--azul-marinho);
+            color: var(--branco);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .limite-box span { color: var(--ouro); font-size: 2.5rem; font-weight: bold; }
+
+        /* GRID DE REGRAS E METAS */
+        .grid-detalhada {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
             margin-top: 30px;
         }
 
-        .card {
+        .item-detalhe {
+            padding: 30px;
+            border-radius: 20px;
             background: #f8f9fa;
-            border: 1px solid #ddd;
-            padding: 25px;
-            border-radius: 10px;
-            position: relative;
+            border: 1px solid #e9ecef;
             transition: 0.3s;
         }
+        .item-detalhe:hover { transform: translateY(-5px); border-color: var(--verde-gestao); }
 
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-        .bonus-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--accent);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            color: var(--dark);
-        }
-
-        .punicao-box {
-            background: #fff5f5;
-            border: 3px solid var(--danger);
-            padding: 30px;
-            border-radius: 10px;
-            margin: 40px 0;
-        }
-
-        .punicao-item {
-            margin-bottom: 20px;
-            padding-left: 20px;
-            border-left: 4px solid var(--danger);
-        }
-
-        .tabela-container { overflow-x: auto; margin-top: 30px; }
-        table { width: 100%; border-collapse: collapse; min-width: 800px; }
-        th, td { padding: 18px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: var(--primary); color: white; }
-        tr:nth-child(even) { background: #fdfdfd; }
-
-        .footer { background: var(--dark); color: white; text-align: center; padding: 50px 20px; margin-top: 50px; }
-
-        .highlight-meta { color: var(--success); font-weight: bold; }
-
-          .base-rules {
-            display: flex;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .base-card {
-            flex: 1;
-            min-width: 280px;
+        /* REQUISITOS DE CANDIDATOS */
+        .requisitos-candidato {
             background: #eef2f7;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 8px solid var(--primary);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid var(--azul-marinho);
         }
 
-       .aabb{
+        /* PUNIÇÕES E SUCESSÃO */
+        .alerta-box {
+            border-left: 15px solid var(--vermelho-lei);
+            background: #fff5f5;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        .abc{
+            color: #09a677;
+        }
+
+        /* TABELA */
+        .table-wrapper { overflow-x: auto; margin-top: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th { background: var(--azul-marinho); color: white; padding: 25px; text-align: left; }
+        td { padding: 20px; border-bottom: 1px solid #eee; }
+
+        footer {
+            background: #011627;
+            color: white;
+            padding: 80px 20px;
             text-align: center;
         }
+        /* --- CÓDIGO DE RESPONSIVIDADE (COLE AQUI) --- */
+
+@media (max-width: 992px) {
+    /* Tablet */
+    .container {
+        width: 95%;
+        margin-top: -30px;
+        padding: 25px;
+    }
+    .grid-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    /* Celular */
+    header {
+        padding: 50px 15px;
+    }
+    h1 {
+        font-size: 1.8rem !important; /* Diminui o título no celular */
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    .container {
+        margin-top: -20px;
+        padding: 15px;
+    }
+    .grid-cards {
+        grid-template-columns: 1fr; /* 1 coluna no celular (empilhado) */
+    }
+    .base-rules {
+        flex-direction: column; /* Bases ficam uma abaixo da outra */
+    }
+    .base-card {
+        width: 100%;
+    }
+    /* Faz a tabela ter barra de rolagem lateral para não quebrar o site */
+    .tabela-container {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    table {
+        min-width: 600px; /* Garante que os dados da tabela fiquem legíveis */
+    }
+    .card {
+        padding: 15px;
+    }
+     .abc{
+            color: #ffe30f;
+        }
+}
+
+@media (max-width: 420px) {
+    /* Celular */
+    header {
+        padding: 15px 8px;
+    }
+    h1 {
+        font-size: 1.2rem !important; /* Diminui o título no celular */
+    }
+    h2 {
+        font-size: 1.0rem;
+    }
+    .container {
+        margin-top: -10px;
+        padding: 15px;
+    }
+    .grid-cards {
+        grid-template-columns: 1fr; /* 1 coluna no celular (empilhado) */
+    }
+    .base-rules {
+        flex-direction: column; /* Bases ficam uma abaixo da outra */
+    }
+    .base-card {
+        width: 100%;
+    }
+    /* Faz a tabela ter barra de rolagem lateral para não quebrar o site */
+    .tabela-container {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    table {
+        min-width: 450px; /* Garante que os dados da tabela fiquem legíveis */
+    }
+    .secao {
+           
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
             
-        
+
+    .card {
+        padding: 15px;
+    }
+}
+}
